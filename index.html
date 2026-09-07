@@ -1,240 +1,366 @@
-<!DOCTYPE HTML>
-<!--
-	Alpha by HTML5 UP (Tailored for Luis David Fonseca - Fixed Slide Layout & Header Contrast)
--->
-<html>
-	<head>
-		<title>Luis David Fonseca | Aerospace Engineering & Space Systems</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<style>
-			/* Fixed Header Contrast & Navigation Fix */
-			#header {
-				background-color: #171b21 !important;
-				position: fixed !important;
-				top: 0;
-				left: 0;
-				width: 100%;
-				z-index: 10000;
-				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-			}
-			#header h1 a, 
-			#header nav ul li a {
-				color: #ffffff !important;
-				text-shadow: none !important;
-				font-weight: 600;
-			}
-			#header nav ul li a.button {
-				border-color: rgba(255, 255, 255, 0.7) !important;
-				color: #ffffff !important;
-			}
-			#header nav ul li a.button:hover {
-				background-color: rgba(255, 255, 255, 0.15) !important;
-			}
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luis David Fonseca | Aerospace Engineering Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        space: {
+                            950: '#05070a',
+                            900: '#0d1117',
+                            800: '#161b22',
+                            700: '#21262d',
+                            border: '#30363d',
+                        },
+                        accent: {
+                            cyan: '#38bdf8',
+                            blue: '#60a5fa',
+                            indigo: '#818cf8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .grid-bg {
+            background-image: radial-gradient(rgba(56, 189, 248, 0.08) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-space-950 text-slate-200 font-sans antialiased selection:bg-accent-cyan selection:text-space-950">
 
-			/* CSS Scroll Snapping on Root Viewport */
-			html {
-				scroll-behavior: smooth;
-				scroll-snap-type: y mandatory;
-			}
-			body {
-				margin: 0;
-				padding: 0;
-			}
-			.slide-section {
-				scroll-snap-align: start;
-				scroll-snap-stop: always;
-				min-height: 100vh;
-				width: 100%;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				box-sizing: border-box;
-				padding: 6em 1.5em 3em 1.5em;
-			}
+    <!-- Fixed Glassmorphic Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-space-900/80 backdrop-blur-md border-b border-space-border/60">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#hero" class="text-lg font-bold tracking-tight text-white flex items-center gap-2 hover:text-accent-cyan transition-colors">
+                <span class="text-accent-cyan font-mono">&gt;</span> Luis D. Fonseca
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#about" class="hover:text-accent-cyan transition-colors">About</a>
+                <a href="#skills" class="hover:text-accent-cyan transition-colors">Skills</a>
+                <a href="#research" class="hover:text-accent-cyan transition-colors">Research</a>
+                <a href="#projects" class="hover:text-accent-cyan transition-colors">Projects</a>
+                <a href="#experience" class="hover:text-accent-cyan transition-colors">Experience</a>
+                <a href="#contact" class="px-4 py-2 bg-accent-cyan/10 border border-accent-cyan/30 text-accent-cyan rounded-lg hover:bg-accent-cyan hover:text-space-950 transition-all font-mono text-xs">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-			/* Banner Slide Specific Alignment */
-			#slide-banner #banner {
-				background-attachment: scroll;
-				min-height: 100vh;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				margin: 0;
-			}
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen pt-24 flex items-center relative grid-bg overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-space-950/50 to-space-950 pointer-events-none"></div>
+        <div class="max-w-6xl mx-auto px-6 py-12 relative z-10">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-space-800 border border-space-border text-accent-cyan font-mono text-xs mb-6">
+                <span class="w-2 h-2 rounded-full bg-accent-cyan animate-pulse"></span>
+                UC Berkeley Aerospace Engineering
+            </div>
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight mb-6">
+                Designing systems for <br class="hidden sm:inline"/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan via-accent-blue to-accent-indigo">the next space horizon.</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-400 max-w-2xl font-light mb-8 leading-relaxed">
+                Specializing in Electric Propulsion, Space Robotics, Flight Hardware Integration, and Autonomous Orbital Servicing.
+            </p>
+            <div class="flex flex-wrap items-center gap-4">
+                <a href="#projects" class="px-6 py-3 bg-accent-cyan text-space-950 font-semibold rounded-lg hover:bg-accent-blue hover:text-white transition-all shadow-lg shadow-accent-cyan/10">View Hardware & Projects</a>
+                <a href="#contact" class="px-6 py-3 bg-space-800 border border-space-border text-white font-medium rounded-lg hover:border-accent-cyan/50 hover:bg-space-700 transition-all">Get in Touch</a>
+            </div>
+        </div>
+    </section>
 
-			/* Mobile fallback for smaller viewports */
-			@media screen and (max-height: 700px) {
-				html {
-					scroll-snap-type: none;
-				}
-				.slide-section {
-					min-height: auto;
-					padding: 4em 1em;
-				}
-			}
-		</style>
-	</head>
-	<body class="landing is-preload">
-		<div id="page-wrapper">
+    <!-- About Section -->
+    <section id="about" class="py-24 border-t border-space-border/40">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7">
+                    <h2 class="text-xs font-mono text-accent-cyan tracking-wider uppercase mb-2">// Academic Profile</h2>
+                    <h3 class="text-3xl font-bold text-white mb-6">Building robust hardware for high-friction environments.</h3>
+                    <p class="text-slate-300 leading-relaxed mb-4">
+                        I am an Aerospace Engineering undergraduate at UC Berkeley driven by solving critical bottlenecks in satellite deployment, deep-space propulsion, and autonomous servicing systems.
+                    </p>
+                    <p class="text-slate-400 leading-relaxed mb-6">
+                        My background bridges dynamic control systems, embedded hardware design, and plasma propulsion diagnostics—grounded in real-world fabrication and test operations.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 border-t border-space-border pt-6">
+                        <div>
+                            <span class="block text-2xl font-bold text-white">UC Berkeley</span>
+                            <span class="text-xs text-slate-400 font-mono">B.S. Aerospace Engineering</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-bold text-white">AIAA Member</span>
+                            <span class="text-xs text-slate-400 font-mono">Conference Author (ASCEND 2025)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 bg-space-900 border border-space-border p-6 rounded-xl relative">
+                    <div class="font-mono text-xs text-slate-400 mb-4 flex items-center justify-between">
+                        <span>CORE_FOCUS.config</span>
+                        <span class="text-emerald-400">STATUS: ACTIVE</span>
+                    </div>
+                    <ul class="space-y-3 font-mono text-sm">
+                        <li class="flex items-center gap-3 p-2.5 bg-space-800/50 rounded-lg border border-space-border/50 text-slate-200">
+                            <span class="text-accent-cyan">01</span> Electric Propulsion Systems
+                        </li>
+                        <li class="flex items-center gap-3 p-2.5 bg-space-800/50 rounded-lg border border-space-border/50 text-slate-200">
+                            <span class="text-accent-cyan">02</span> Space Robotics & Actuation
+                        </li>
+                        <li class="flex items-center gap-3 p-2.5 bg-space-800/50 rounded-lg border border-space-border/50 text-slate-200">
+                            <span class="text-accent-cyan">03</span> Flight Hardware Integration
+                        </li>
+                        <li class="flex items-center gap-3 p-2.5 bg-space-800/50 rounded-lg border border-space-border/50 text-slate-200">
+                            <span class="text-accent-cyan">04</span> On-Orbit Servicing & Controls
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-			<!-- Header -->
-				<header id="header">
-					<h1><a href="#slide-banner">Luis D. Fonseca</a></h1>
-					<nav id="nav">
-						<ul>
-							<li><a href="#slide-banner">Home</a></li>
-							<li>
-								<a href="#" class="icon solid fa-angle-down">Portfolio</a>
-								<ul>
-									<li><a href="#slide-about">About Me</a></li>
-									<li><a href="#slide-research">Research & Papers</a></li>
-									<li><a href="#slide-projects">Projects & Hardware</a></li>
-									<li><a href="#slide-experience">Industry Experience</a></li>
-								</ul>
-							</li>
-							<li><a href="#slide-contact" class="button">Contact</a></li>
-						</ul>
-					</nav>
-				</header>
+    <!-- Technical Skills -->
+    <section id="skills" class="py-24 bg-space-900/40 border-t border-space-border/40">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-xs font-mono text-accent-cyan tracking-wider uppercase mb-2">// Technical Capabilities</h2>
+            <h3 class="text-3xl font-bold text-white mb-12">Tools & Engineering Stack</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- CAD & Simulation -->
+                <div class="bg-space-900 border border-space-border p-6 rounded-xl hover:border-accent-cyan/40 transition-colors">
+                    <h4 class="text-white font-semibold mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                        CAD & Simulation
+                    </h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 bg-space-800 border border-space-border text-xs font-mono rounded text-slate-300">SolidWorks</span>
+                        <span class="px-2.5 py-1 bg-space-800 border border-space-border text-xs font-mono rounded text-slate-300">Fusion 360</span>
+                        <span class="px-2.5 py-1 bg-space-800 border border-space-border text-xs font-mono rounded text-slate-300">AutoCAD</span>
+                        <span class="px-2.5 py-1 bg-space-800 border border-space-border text-xs font-mono rounded text-slate-300">Ansys FEA</span>
+                    </div>
+                </div>
 
-			<!-- Slide 1: Banner -->
-				<section id="slide-banner" class="slide-section" style="padding: 0;">
-					<section id="banner">
-						<h2>Luis David Fonseca</h2>
-						<p>B.S. Aerospace Engineering @ UC Berkeley | Electric Propulsion, Space Robotics & Flight Hardware</p>
-						<ul class="actions special">
-							<li><a href="#slide-about" class="button primary">About Me</a></li>
-							<li><a href="#slide-projects" class="button">Projects</a></li>
-						</ul>
-					</section>
-				</section>
+                <!-- Computation & Software -->
+                <div class="bg-space-900 border border-space-border p-6 rounded-xl hover:border-accent-cyan/40 transition-colors">
+                    <h4 class="text-white font-semibold mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-accent-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                        Computation & ML
+                    </h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 bg-space-800 border border-space-border text-xs font-mono rounded text-slate-300">Python</span>
+                        <span class="px-2.5 py-1 bg-space-800 border border-space-border text-xs font-mono rounded text-slate-300">MATLAB</span>
+                        <span class="px-2.5 py-1 bg-space-800 border border-space-border text-xs font-mono rounded text-slate-300">TensorFlow</span>
+                        <span class="px-2.5 py-1 bg-space-800 border border-space-border text-xs font-mono rounded text-slate-300">Jupyter</span>
+                    </div>
+                </div>
 
-			<!-- Slide 2: About & Technical Profile -->
-				<section id="slide-about" class="slide-section">
-					<section class="container">
-						<section class="box special">
-							<header class="major">
-								<h2>Aerospace Engineering @ UC Berkeley</h2>
-								<p>Focus: Electric Propulsion, Space Systems Engineering, Space Robotics & Control Systems</p>
-							</header>
-							<p>I am an Aerospace Engineering undergraduate at UC Berkeley driven by a deep passion for pushing the boundaries of space exploration and flight hardware[cite: 1]. My work focuses on solving complex challenges in electric propulsion, space robotics, and autonomous systems through hands-on development and modeling[cite: 1].</p>
-							<p><strong>Technical Skills:</strong> Python, MATLAB, Jupyter, TensorFlow, SolidWorks, Fusion 360, AutoCAD, Ansys, 3D Printing, WaterJet & Laser Cutting[cite: 1].</p>
-						</section>
-					</section>
-				</section>
+                <!-- Manufacturing & Hardware -->
+                <div class="bg-space-900 border border-space-border p-6 rounded-xl hover:border-accent-cyan/40 transition-colors">
+                    <h4 class="text-white font-semibold mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-accent-indigo" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a2 2 0 01-2 2 2 2 0 01-2-2V4zM4 7a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V7z"></path></svg>
+                        Prototyping & Hardware
+                    </h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2.5 py-1 bg-space-800 border border-space-border text-xs font-mono rounded text-slate-300">3D Printing</span>
+                        <span class="px-2.5 py-1 bg-space-800 border border-space-border text-xs font-mono rounded text-slate-300">WaterJet Cutting</span>
+                        <span class="px-2.5 py-1 bg-space-800 border border-space-border text-xs font-mono rounded text-slate-300">Laser Cutting</span>
+                        <span class="px-2.5 py-1 bg-space-800 border border-space-border text-xs font-mono rounded text-slate-300">ESP32 / Embedded</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-			<!-- Slide 3: Research Section -->
-				<section id="slide-research" class="slide-section">
-					<section class="container">
-						<section class="box special features">
-							<h2>Research & Publications</h2>
-							<div class="features-row">
-								<section>
-									<span class="icon solid major fa-atom accent2"></span>
-									<h3>Nanotechnology Concepts Lab</h3>
-									<p>Investigated plasma jet thruster feasibility and analyzed plasma behavior under low-pressure conditions[cite: 1]. Conducted comparative performance limits and scalability analyses for small spacecraft electric propulsion systems[cite: 1].</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-plane-departure accent3"></span>
-									<h3>Sustainable Aviation Systems Lab</h3>
-									<p>Evaluated alternative-fuel flight trajectories and developed machine learning models to analyze fuel consumption, emissions, and environmental impact using NASA trajectory datasets[cite: 1].</p>
-								</section>
-							</div>
-							<div class="features-row">
-								<section>
-									<span class="icon solid major fa-robot accent4"></span>
-									<h3>Squishy Robotics / BEST Lab</h3>
-									<p>Designed and tested pan-tilt actuation systems using motor drives and encoders[cite: 1]. Evaluated drivetrain gear ratios and integrated sensor arrays with ML teams for robotic data collection[cite: 1].</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-scroll accent5"></span>
-									<h3>AIAA & Conference Papers</h3>
-									<p>Author/Co-author on AIAA ASCEND 2025 papers covering <em>Constellation-as-a-Service</em> and <em>On-Orbit Satellite Servicing</em>, alongside project presentations on <em>Quantum QubeSat</em> at SSL[cite: 1].</p>
-								</section>
-							</div>
-						</section>
-					</section>
-				</section>
+    <!-- Research & Publications Section -->
+    <section id="research" class="py-24 border-t border-space-border/40">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-xs font-mono text-accent-cyan tracking-wider uppercase mb-2">// Lab Research</h2>
+            <h3 class="text-3xl font-bold text-white mb-12">Research & Publications</h3>
 
-			<!-- Slide 4: Projects Section -->
-				<section id="slide-projects" class="slide-section">
-					<section class="container">
-						<h2 style="text-align: center; margin-bottom: 1em;">Featured Hardware & Projects</h2>
-						<div class="row">
-							<div class="col-6 col-12-narrower">
-								<section class="box special">
-									<span class="image featured"><img src="images/pic02.jpg" alt="Space Technologies at Cal" /></span>
-									<h3>Space Technologies at California (STAC)</h3>
-									<p>Served as Engineering Director (40+ members) and Mechanical Lead[cite: 1]. Fabricated solar panels, programmed radio/antenna control software, and prepared pre-launch flight documentation[cite: 1].</p>
-								</section>
-							</div>
-							<div class="col-6 col-12-narrower">
-								<section class="box special">
-									<span class="image featured"><img src="images/pic03.jpg" alt="Breeze Brim ESP32" /></span>
-									<h3>Breeze Brim Embedded System</h3>
-									<p>Designed a solar-powered cooling hat using dual ESP32 microcontrollers and a BME280 sensor with wireless threshold alert systems for heat mitigation[cite: 1].</p>
-								</section>
-							</div>
-						</div>
-					</section>
-				</section>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-space-900 border border-space-border p-8 rounded-xl flex flex-col justify-between hover:border-accent-cyan/30 transition-all">
+                    <div>
+                        <div class="text-accent-cyan text-xs font-mono mb-2">NANOTECHNOLOGY CONCEPTS LAB</div>
+                        <h4 class="text-xl font-bold text-white mb-3">Plasma Jet Thruster Feasibility & Analysis</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Investigated plasma thruster operational limits under low-pressure conditions, executing comparative scaling analysis for small satellite electric propulsion units.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2 font-mono text-xs text-slate-400 border-t border-space-border/60 pt-4">
+                        <span>Focus: Electric Propulsion</span>
+                    </div>
+                </div>
 
-			<!-- Slide 5: Industry Experience Section -->
-				<section id="slide-experience" class="slide-section">
-					<section class="container">
-						<section class="box special">
-							<h2>Industry Experience & Leadership</h2>
-							<p><strong>Honeywell Aerospace</strong> | <em>Engineering Project Manager Intern</em></p>
-							<p>Built a TINA-compliant forecasting program using historical commercial/military data, tracked 50+ hardware orders in SAP, and earned Distinguished Project Engineer Intern recognition[cite: 1].</p>
-							<p><strong>Space Enterprise at Berkeley</strong> | <em>Propulsion Engineer</em></p>
-							<p>Modeled propulsion hardware using Fusion 360 and AutoCAD, fabricating 10+ precision components for subsystem integration[cite: 1].</p>
-						</section>
-					</section>
-				</section>
+                <div class="bg-space-900 border border-space-border p-8 rounded-xl flex flex-col justify-between hover:border-accent-cyan/30 transition-all">
+                    <div>
+                        <div class="text-accent-cyan text-xs font-mono mb-2">SUSTAINABLE AVIATION SYSTEMS LAB</div>
+                        <h4 class="text-xl font-bold text-white mb-3">Trajectory Emissions & ML Modeling</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Constructed machine learning models utilizing NASA trajectory datasets to evaluate fuel consumption dynamics and environmental impact across alternative flight profiles.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2 font-mono text-xs text-slate-400 border-t border-space-border/60 pt-4">
+                        <span>Focus: Flight Dynamics & ML</span>
+                    </div>
+                </div>
 
-			<!-- Slide 6: Contact / CTA & Footer -->
-				<section id="slide-contact" class="slide-section">
-					<section id="cta">
-						<h2>Get in Touch</h2>
-						<p>Email: <strong>luis.dfonseca78@berkeley.edu</strong></p>
+                <div class="bg-space-900 border border-space-border p-8 rounded-xl flex flex-col justify-between hover:border-accent-cyan/30 transition-all">
+                    <div>
+                        <div class="text-accent-cyan text-xs font-mono mb-2">SQUISHY ROBOTICS / BEST LAB</div>
+                        <h4 class="text-xl font-bold text-white mb-3">Pan-Tilt Robotic Actuation Drivetrain</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Engineered pan-tilt actuation systems featuring precision motor drives, encoders, and optimized gear ratios. Integrated sensor arrays directly with machine learning data collection pipelines.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2 font-mono text-xs text-slate-400 border-t border-space-border/60 pt-4">
+                        <span>Focus: Robotics & Actuation</span>
+                    </div>
+                </div>
 
-						<form action="mailto:luis.dfonseca78@berkeley.edu" method="post" enctype="text/plain">
-							<div class="row gtr-50 gtr-uniform">
-								<div class="col-8 col-12-mobilep">
-									<input type="email" name="email" id="email" placeholder="Your Email Address" />
-								</div>
-								<div class="col-4 col-12-mobilep">
-									<input type="submit" value="Send Message" class="fit" />
-								</div>
-							</div>
-						</form>
-					</section>
+                <div class="bg-space-900 border border-space-border p-8 rounded-xl flex flex-col justify-between hover:border-accent-cyan/30 transition-all">
+                    <div>
+                        <div class="text-accent-cyan text-xs font-mono mb-2">CONFERENCE PAPERS & PRESENTATIONS</div>
+                        <h4 class="text-xl font-bold text-white mb-3">AIAA ASCEND 2025 Publications</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Co-authored paper submissions on <em>Constellation-as-a-Service</em> and <em>On-Orbit Satellite Servicing</em>. Delivered technical presentations on the <em>Quantum CubeSat</em> initiative at Space Sciences Laboratory (SSL).
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-2 font-mono text-xs text-slate-400 border-t border-space-border/60 pt-4">
+                        <span>AIAA ASCEND 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-					<!-- Footer -->
-					<footer id="footer">
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/luisdfonseca/" target="_blank" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://github.com" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
-							<li><a href="mailto:luis.dfonseca78@berkeley.edu" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
-						<ul class="copyright">
-							<li>&copy; Luis David Fonseca. All rights reserved.</li>
-						</ul>
-					</footer>
-				</section>
+    <!-- Featured Projects -->
+    <section id="projects" class="py-24 bg-space-900/40 border-t border-space-border/40">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-xs font-mono text-accent-cyan tracking-wider uppercase mb-2">// Featured Engineering</h2>
+            <h3 class="text-3xl font-bold text-white mb-12">Hardware & Systems</h3>
 
-		</div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- STAC -->
+                <div class="bg-space-900 border border-space-border rounded-xl overflow-hidden group hover:border-accent-cyan/40 transition-all">
+                    <div class="h-48 bg-space-800 flex items-center justify-center border-b border-space-border">
+                        <span class="font-mono text-slate-500 text-sm">[STAC Flight Hardware Assembly]</span>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="text-xl font-bold text-white group-hover:text-accent-cyan transition-colors">Space Technologies at California (STAC)</h4>
+                            <span class="px-2.5 py-0.5 bg-accent-cyan/10 text-accent-cyan border border-accent-cyan/20 text-xs font-mono rounded">Leadership</span>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Served as Engineering Director managing 40+ member teams and Mechanical Lead. Directed fabrication of custom solar panel structures, radio/antenna control software routines, and pre-launch flight readiness documentation.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-space-800 text-slate-300 font-mono text-xs rounded">Solar Arrays</span>
+                            <span class="px-2 py-1 bg-space-800 text-slate-300 font-mono text-xs rounded">RF Control</span>
+                            <span class="px-2 py-1 bg-space-800 text-slate-300 font-mono text-xs rounded">System Specs</span>
+                        </div>
+                    </div>
+                </div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+                <!-- Breeze Brim -->
+                <div class="bg-space-900 border border-space-border rounded-xl overflow-hidden group hover:border-accent-cyan/40 transition-all">
+                    <div class="h-48 bg-space-800 flex items-center justify-center border-b border-space-border">
+                        <span class="font-mono text-slate-500 text-sm">[ESP32 Microcontroller Architecture]</span>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="text-xl font-bold text-white group-hover:text-accent-cyan transition-colors">Breeze Brim Embedded System</h4>
+                            <span class="px-2.5 py-0.5 bg-accent-blue/10 text-accent-blue border border-accent-blue/20 text-xs font-mono rounded">Embedded</span>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Architected a solar-powered thermal regulation apparel system driven by dual ESP32 microcontrollers and a BME280 sensor array featuring automated wireless threshold alert protocols.
+                        </p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-space-800 text-slate-300 font-mono text-xs rounded">Dual ESP32</span>
+                            <span class="px-2 py-1 bg-space-800 text-slate-300 font-mono text-xs rounded">BME280</span>
+                            <span class="px-2 py-1 bg-space-800 text-slate-300 font-mono text-xs rounded">C++ / Wireless</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	</body>
+    <!-- Industry Experience -->
+    <section id="experience" class="py-24 border-t border-space-border/40">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-xs font-mono text-accent-cyan tracking-wider uppercase mb-2">// Career History</h2>
+            <h3 class="text-3xl font-bold text-white mb-12">Industry & Leadership</h3>
+
+            <div class="space-y-8 relative before:absolute before:inset-0 before:left-3 before:w-0.5 before:bg-space-border md:before:left-1/2">
+                <!-- Honeywell -->
+                <div class="relative flex flex-col md:flex-row items-center justify-between group">
+                    <div class="w-full md:w-[45%] bg-space-900 border border-space-border p-6 rounded-xl hover:border-accent-cyan/40 transition-colors mb-4 md:mb-0">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-white font-bold">Honeywell Aerospace</span>
+                            <span class="text-xs font-mono text-accent-cyan">Internship</span>
+                        </div>
+                        <div class="text-xs font-mono text-slate-400 mb-3">Engineering Project Manager Intern</div>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Built a TINA-compliant procurement forecasting model utilizing historical defense data, monitored 50+ key hardware orders via SAP, and received Distinguished Project Engineer Intern honors.
+                        </p>
+                    </div>
+                    <div class="absolute left-3 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-space-900 border-2 border-accent-cyan"></div>
+                    <div class="w-full md:w-[45%]"></div>
+                </div>
+
+                <!-- SEB -->
+                <div class="relative flex flex-col md:flex-row items-center justify-between group">
+                    <div class="w-full md:w-[45%]"></div>
+                    <div class="absolute left-3 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-space-900 border-2 border-accent-blue"></div>
+                    <div class="w-full md:w-[45%] bg-space-900 border border-space-border p-6 rounded-xl hover:border-accent-cyan/40 transition-colors">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-white font-bold">Space Enterprise at Berkeley</span>
+                            <span class="text-xs font-mono text-accent-blue">Propulsion</span>
+                        </div>
+                        <div class="text-xs font-mono text-slate-400 mb-3">Propulsion Subsystem Engineer</div>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            CAD-modeled high-tolerance liquid/gas propulsion components in Fusion 360 & AutoCAD, personally machining 10+ flight-ready hardware pieces for rocket assembly integration.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <section id="contact" class="py-24 bg-space-900 border-t border-space-border">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-xs font-mono text-accent-cyan tracking-wider uppercase mb-2">// Contact</h2>
+            <h3 class="text-3xl font-bold text-white mb-6">Let's build something extraordinary.</h3>
+            <p class="text-slate-400 max-w-lg mx-auto mb-8">
+                Currently open to aerospace engineering roles, research collaborations, and hardware design inquiries.
+            </p>
+            <div class="inline-flex items-center justify-center p-4 bg-space-800 border border-space-border rounded-xl mb-8">
+                <a href="mailto:luis.dfonseca78@berkeley.edu" class="text-accent-cyan font-mono hover:underline text-lg">luis.dfonseca78@berkeley.edu</a>
+            </div>
+            <div class="flex justify-center gap-6">
+                <a href="https://www.linkedin.com/in/luisdfonseca/" target="_blank" class="text-slate-400 hover:text-white transition-colors font-mono text-sm">LinkedIn</a>
+                <a href="https://github.com" target="_blank" class="text-slate-400 hover:text-white transition-colors font-mono text-sm">GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-6 border-t border-space-border/40 text-center text-xs text-slate-500 font-mono">
+        © Luis David Fonseca. UC Berkeley Aerospace Engineering.
+    </footer>
+
+</body>
 </html>
