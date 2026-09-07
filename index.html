@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <!--
-	Alpha by HTML5 UP (Tailored for Luis David Fonseca - Slide Section Layout)
+	Alpha by HTML5 UP (Tailored for Luis David Fonseca - Fixed Slide Layout & Header Contrast)
 -->
 <html>
 	<head>
@@ -9,36 +9,69 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
-			/* CSS Scroll Snapping for Full-Screen Slide Effect */
+			/* Fixed Header Contrast & Navigation Fix */
+			#header {
+				background-color: #171b21 !important;
+				position: fixed !important;
+				top: 0;
+				left: 0;
+				width: 100%;
+				z-index: 10000;
+				box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+			}
+			#header h1 a, 
+			#header nav ul li a {
+				color: #ffffff !important;
+				text-shadow: none !important;
+				font-weight: 600;
+			}
+			#header nav ul li a.button {
+				border-color: rgba(255, 255, 255, 0.7) !important;
+				color: #ffffff !important;
+			}
+			#header nav ul li a.button:hover {
+				background-color: rgba(255, 255, 255, 0.15) !important;
+			}
+
+			/* CSS Scroll Snapping on Root Viewport */
 			html {
 				scroll-behavior: smooth;
-			}
-			#page-wrapper {
-				height: 100vh;
-				overflow-y: scroll;
 				scroll-snap-type: y mandatory;
-				scroll-behavior: smooth;
+			}
+			body {
+				margin: 0;
+				padding: 0;
 			}
 			.slide-section {
 				scroll-snap-align: start;
 				scroll-snap-stop: always;
 				min-height: 100vh;
+				width: 100%;
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
 				box-sizing: border-box;
-				padding: 4em 0;
+				padding: 6em 1.5em 3em 1.5em;
 			}
-			/* Mobile responsiveness fallback */
+
+			/* Banner Slide Specific Alignment */
+			#slide-banner #banner {
+				background-attachment: scroll;
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				margin: 0;
+			}
+
+			/* Mobile fallback for smaller viewports */
 			@media screen and (max-height: 700px) {
-				#page-wrapper {
+				html {
 					scroll-snap-type: none;
-					height: auto;
-					overflow-y: visible;
 				}
 				.slide-section {
 					min-height: auto;
-					padding: 2em 0;
+					padding: 4em 1em;
 				}
 			}
 		</style>
@@ -47,7 +80,7 @@
 		<div id="page-wrapper">
 
 			<!-- Header -->
-				<header id="header" class="alt">
+				<header id="header">
 					<h1><a href="#slide-banner">Luis D. Fonseca</a></h1>
 					<nav id="nav">
 						<ul>
@@ -67,7 +100,7 @@
 				</header>
 
 			<!-- Slide 1: Banner -->
-				<section id="slide-banner" class="slide-section">
+				<section id="slide-banner" class="slide-section" style="padding: 0;">
 					<section id="banner">
 						<h2>Luis David Fonseca</h2>
 						<p>B.S. Aerospace Engineering @ UC Berkeley | Electric Propulsion, Space Robotics & Flight Hardware</p>
@@ -86,8 +119,8 @@
 								<h2>Aerospace Engineering @ UC Berkeley</h2>
 								<p>Focus: Electric Propulsion, Space Systems Engineering, Space Robotics & Control Systems</p>
 							</header>
-							<p>I am an Aerospace Engineering undergraduate at UC Berkeley driven by a deep passion for pushing the boundaries of space exploration and flight hardware. My work focuses on solving complex challenges in electric propulsion, space robotics, and autonomous systems through hands-on development and modeling.</p>
-							<p><strong>Technical Skills:</strong> Python, MATLAB, Jupyter, TensorFlow, SolidWorks, Fusion 360, AutoCAD, Ansys, 3D Printing, WaterJet & Laser Cutting.</p>
+							<p>I am an Aerospace Engineering undergraduate at UC Berkeley driven by a deep passion for pushing the boundaries of space exploration and flight hardware[cite: 1]. My work focuses on solving complex challenges in electric propulsion, space robotics, and autonomous systems through hands-on development and modeling[cite: 1].</p>
+							<p><strong>Technical Skills:</strong> Python, MATLAB, Jupyter, TensorFlow, SolidWorks, Fusion 360, AutoCAD, Ansys, 3D Printing, WaterJet & Laser Cutting[cite: 1].</p>
 						</section>
 					</section>
 				</section>
@@ -101,24 +134,24 @@
 								<section>
 									<span class="icon solid major fa-atom accent2"></span>
 									<h3>Nanotechnology Concepts Lab</h3>
-									<p>Investigated plasma jet thruster feasibility and analyzed plasma behavior under low-pressure conditions. Conducted comparative performance limits and scalability analyses for small spacecraft electric propulsion systems.</p>
+									<p>Investigated plasma jet thruster feasibility and analyzed plasma behavior under low-pressure conditions[cite: 1]. Conducted comparative performance limits and scalability analyses for small spacecraft electric propulsion systems[cite: 1].</p>
 								</section>
 								<section>
 									<span class="icon solid major fa-plane-departure accent3"></span>
 									<h3>Sustainable Aviation Systems Lab</h3>
-									<p>Evaluated alternative-fuel flight trajectories and developed machine learning models to analyze fuel consumption, emissions, and environmental impact using NASA trajectory datasets.</p>
+									<p>Evaluated alternative-fuel flight trajectories and developed machine learning models to analyze fuel consumption, emissions, and environmental impact using NASA trajectory datasets[cite: 1].</p>
 								</section>
 							</div>
 							<div class="features-row">
 								<section>
 									<span class="icon solid major fa-robot accent4"></span>
 									<h3>Squishy Robotics / BEST Lab</h3>
-									<p>Designed and tested pan-tilt actuation systems using motor drives and encoders. Evaluated drivetrain gear ratios and integrated sensor arrays with ML teams for robotic data collection.</p>
+									<p>Designed and tested pan-tilt actuation systems using motor drives and encoders[cite: 1]. Evaluated drivetrain gear ratios and integrated sensor arrays with ML teams for robotic data collection[cite: 1].</p>
 								</section>
 								<section>
 									<span class="icon solid major fa-scroll accent5"></span>
 									<h3>AIAA & Conference Papers</h3>
-									<p>Author/Co-author on AIAA ASCEND 2025 papers covering <em>Constellation-as-a-Service</em> and <em>On-Orbit Satellite Servicing</em>, alongside project presentations on <em>Quantum QubeSat</em> at SSL.</p>
+									<p>Author/Co-author on AIAA ASCEND 2025 papers covering <em>Constellation-as-a-Service</em> and <em>On-Orbit Satellite Servicing</em>, alongside project presentations on <em>Quantum QubeSat</em> at SSL[cite: 1].</p>
 								</section>
 							</div>
 						</section>
@@ -134,14 +167,14 @@
 								<section class="box special">
 									<span class="image featured"><img src="images/pic02.jpg" alt="Space Technologies at Cal" /></span>
 									<h3>Space Technologies at California (STAC)</h3>
-									<p>Served as Engineering Director (40+ members) and Mechanical Lead. Fabricated solar panels, programmed radio/antenna control software, and prepared pre-launch flight documentation.</p>
+									<p>Served as Engineering Director (40+ members) and Mechanical Lead[cite: 1]. Fabricated solar panels, programmed radio/antenna control software, and prepared pre-launch flight documentation[cite: 1].</p>
 								</section>
 							</div>
 							<div class="col-6 col-12-narrower">
 								<section class="box special">
 									<span class="image featured"><img src="images/pic03.jpg" alt="Breeze Brim ESP32" /></span>
 									<h3>Breeze Brim Embedded System</h3>
-									<p>Designed a solar-powered cooling hat using dual ESP32 microcontrollers and a BME280 sensor with wireless threshold alert systems for heat mitigation.</p>
+									<p>Designed a solar-powered cooling hat using dual ESP32 microcontrollers and a BME280 sensor with wireless threshold alert systems for heat mitigation[cite: 1].</p>
 								</section>
 							</div>
 						</div>
@@ -154,9 +187,9 @@
 						<section class="box special">
 							<h2>Industry Experience & Leadership</h2>
 							<p><strong>Honeywell Aerospace</strong> | <em>Engineering Project Manager Intern</em></p>
-							<p>Built a TINA-compliant forecasting program using historical commercial/military data, tracked 50+ hardware orders in SAP, and earned Distinguished Project Engineer Intern recognition.</p>
+							<p>Built a TINA-compliant forecasting program using historical commercial/military data, tracked 50+ hardware orders in SAP, and earned Distinguished Project Engineer Intern recognition[cite: 1].</p>
 							<p><strong>Space Enterprise at Berkeley</strong> | <em>Propulsion Engineer</em></p>
-							<p>Modeled propulsion hardware using Fusion 360 and AutoCAD, fabricating 10+ precision components for subsystem integration.</p>
+							<p>Modeled propulsion hardware using Fusion 360 and AutoCAD, fabricating 10+ precision components for subsystem integration[cite: 1].</p>
 						</section>
 					</section>
 				</section>
@@ -165,7 +198,7 @@
 				<section id="slide-contact" class="slide-section">
 					<section id="cta">
 						<h2>Get in Touch</h2>
-						<p>Email: <strong>luis.dfonseca78@berkeley.edu</strong> </p>
+						<p>Email: <strong>luis.dfonseca78@berkeley.edu</strong></p>
 
 						<form action="mailto:luis.dfonseca78@berkeley.edu" method="post" enctype="text/plain">
 							<div class="row gtr-50 gtr-uniform">
